@@ -70,10 +70,10 @@
                 sym_layer_1 {
                         label = "SYMBOL";
                         bindings = <
-&none	&kp TILDE  &kp PIPE  &kp AMPS   &kp LBRC &kp RBRC			&none &to L_DEF  &none     &none    &none    &bootloader
-&none	&kp DOLLAR &kp EXCL	 &kp EQUALS &kp LPAR &kp RPAR			&none &kp LSHIFT &kp LCTRL &kp LALT &kp LGUI &none
-&none	&kp GRAVE  &kp CARET &kp HASH   &kp LBKT &kp RBKT			&none &to L_SYM  &none     &none    &none    &none
-                       &kp ESC &kp BSPC &kp TAB		&trans &kp SPACE &kp DEL
+&none	&kp TILDE &kp EXCL  &kp AMPS  &kp LBRC &kp RBRC			&none &to L_DEF  &none     &none    &none    &bootloader
+&none	&kp DLLR  &kp PIPE  &kp EQUAL &kp LPAR &kp RPAR			&none &kp LSHIFT &kp LCTRL &kp LALT &kp LGUI &none
+&none	&kp GRAVE &kp CARET &kp HASH  &kp LBKT &kp RBKT			&none &to L_SYM  &none     &none    &none    &none
+                               &kp ESC &kp BSPC &kp TAB		&trans &kp SPACE &kp DEL
                         >;
                 };
 
