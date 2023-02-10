@@ -109,10 +109,10 @@
                 number_layer_4 {
                         label = "NUMBER";
                         bindings = <
-&none   &none    &none    &none     &none      &to L_DEF			&kp RPAR  &kp N7  &kp N8  &kp N9 &kp LPAR  &kp RPAR
-&none   &kp LGUI &kp LALT &kp LCTRL &kp LSHIFT &none				&kp N0    &kp N4  &kp N5  &kp N6 &kp COLON &kp BSLH
-&none   &none    &none    &none     &none      &to LO_NUM			&kp PLUS  &kp N1  &kp N2  &kp N3 &kp FSLH  &kp STAR
-                                 &kp ESC &kp BSPC &trans		&kp RET &kp SPACE &kp DEL
+&bootloader &none    &none    &none     &none      &to L_DEF			&kp RPAR  &kp N7  &kp N8  &kp N9 &kp LPAR  &kp RPAR
+&none       &kp LGUI &kp LALT &kp LCTRL &kp LSHIFT &none				&kp N0    &kp N4  &kp N5  &kp N6 &kp COLON &kp BSLH
+&none       &none    &none    &none     &none      &to LO_NUM			&kp PLUS  &kp N1  &kp N2  &kp N3 &kp FSLH  &kp STAR
+                                     &kp ESC &kp BSPC &trans		&kp RET &kp SPACE &kp DEL
                         >;
                 };
 
@@ -129,9 +129,9 @@
                 mouse_layer_6 {
                         label = "MOUSE";
                         bindings = <
-&bootloader &none    &none    &none     &none      &to L_DEF			&kp LC(Y)  &kp LS(INS) &kp LC(INS) &kp LS(DEL) &kp LC(Z) &none
-&none       &kp LGUI &kp LALT &kp LCTRL &kp LSHIFT &none				&none &none      &none     &none    &none    &none
-&none       &none    &none    &none     &none      &to LO_MOUSE			&none &none      &none     &none    &none    &none
+&none   &none    &none    &none     &none      &to L_DEF			&kp LC(Y)  &kp LS(INS) &kp LC(INS) &kp LS(DEL) &kp LC(Z) &none
+&none   &kp LGUI &kp LALT &kp LCTRL &kp LSHIFT &none				&none &none      &none     &none    &none    &none
+&none   &none    &none    &none     &none      &to LO_MOUSE			&none &none      &none     &none    &none    &none
                                      &trans &kp BSPC  &kp TAB		&kp RET &kp SPACE &kp DEL
                         >;
                 };
