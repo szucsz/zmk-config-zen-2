@@ -120,7 +120,7 @@
                         label = "NAV";
                         bindings = <
 &none   &kp LEFT  &kp UP      &kp DOWN    &kp RIGHT   &to L_DEF			&kp LC(Y)  &kp LS(INS) &kp LC(INS) &kp LS(DEL) &kp LC(Z) &none
-&none   &kp LGUI  &kp LALT    &kp LCTRL   &kp LSHIFT  &none				&caps_word &kp LEFT    &kp UP      &kp DOWN    &kp RIGHT &none
+&none   &kp LGUI  &kp LALT    &kp LCTRL   &kp LSHIFT  &none				&caps_word &kp LEFT    &kp UP      &kp DOWN    &kp RIGHT &kp K_APP
 &none   &kp LC(Z) &kp LS(DEL) &kp LC(INS) &kp LS(INS) &to LO_NAV		&kp INS    &kp HOME    &kp PG_UP   &kp PG_DN   &kp END   &none
                                       &kp ESC &trans &kp TAB		&kp RET &kp SPACE &kp DEL
                         >;
