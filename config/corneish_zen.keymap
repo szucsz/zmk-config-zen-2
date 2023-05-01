@@ -9,20 +9,20 @@
 #define L_MEDIA   3
 #define L_NUM     4
 #define L_NAV     5
-#define L_MOUSE   6
+#define L_META    6
 
 // opposite layers
 #define LO_FUN    L_NUM
 #define LO_SYM    L_NAV
-#define LO_MEDIA  L_MOUSE
+#define LO_MEDIA  L_META
 #define LO_NUM    L_FUN
 #define LO_NAV    L_SYM
-#define LO_MOUSE  L_MEDIA
+#define LO_META   L_MEDIA
 
 #define SYM(k)    &lt L_SYM    k
 #define NUM(k)    &lt L_NUM    k
 #define FUN(k)    &lt L_FUN    k
-#define MOUSE(k)  &lt L_MOUSE  k
+#define META(k)   &lt L_META   k
 #define NAV(k)    &lt L_NAV    k
 #define MEDIA(k)  &lt L_MEDIA  k
 
@@ -51,9 +51,51 @@
             bindings = <&kp>, <&kp>;
         };
     };
-};
+    
+    macros {
+        bt_0: bt_profile_macro_0 {
+            label = "BT_0";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&out OUT_BLE>,
+                  <&bt BT_SEL 0>;
+        };
+    };
 
-/ {
+    macros {
+        bt_1: bt_profile_macro_1 {
+            label = "BT_1";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&out OUT_BLE>,
+                  <&bt BT_SEL 1>;
+        };
+    };
+
+    macros {
+        bt_2: bt_profile_macro_2 {
+            label = "BT_2";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&out OUT_BLE>,
+                  <&bt BT_SEL 2>;
+        };
+    };
+
+    macros {
+        bt_3: bt_profile_macro_3 {
+            label = "BT_3";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&out OUT_BLE>,
+                  <&bt BT_SEL 3>;
+        };
+    };
+
   chosen {
     zmk,matrix_transform = &default_transform;
     //zmk,matrix_transform = &five_column_transform;
@@ -64,74 +106,81 @@
         keymap {
                 compatible = "zmk,keymap";
 
+//`-----------' O O O  O O O `-----------'
                 default_layer_0 {
                         label = "QWERTY";
                         bindings = <
 &kp TAB   &kp Q    &kp W    &kp E     &kp R     &kp T			&kp Y &kp U     &kp I     &kp O    &kp P       &kp BSPC
 &kp LCTRL HMGUI(A) HMALT(S) HMCTRL(D) HMSHFT(F) &kp G			&kp H HMSHFT(J) HMCTRL(K) HMALT(L) HMGUI(SEMI) &kp SQT
 &kp LSHFT &kp Z    &kp X    &kp C     &kp V     &kp B			&kp N &kp M     &kp COMMA &kp DOT  &kp FSLH    &kp MINUS
-                        MOUSE(ESC) NAV(BSPC) NUM(TAB)		FUN(RET) SYM(SPACE) MEDIA(DEL)
+                              META(ESC) NAV(BSPC) NUM(TAB)         FUN(RET) SYM(SPACE) MEDIA(DEL)
                         >;
                 };
 
 // Right hand layers
+//`-----------' O O O  X O O `-----------'
                 fun_layer_1 {
                         label = "FUN";
                         bindings = <
 &none	&kp F9    &kp F10 &kp F11 &kp F12 &none			&to L_DEF   &none      &none     &none    &none    &bootloader
-&none	&kp F5    &kp F6  &kp F7  &kp F8  &none			&none       &kp LSHIFT &kp LCTRL &kp LALT &kp LGUI &none
-&none	&kp F1    &kp F2  &kp F3  &kp F4  &none			&to LO_FUN  &none      &none     &none    &none    &none
-                    &kp ESC &kp BSPC &kp TAB		&trans &kp SPACE &kp DEL
+&none	&kp F1    &kp F2  &kp F3  &kp F4  &none			&none       &kp LSHIFT &kp LCTRL &kp LALT &kp LGUI &none
+&none	&kp F5    &kp F6  &kp F7  &kp F8  &none			&to LO_FUN  &none      &none     &none    &none    &none
+                            &kp ESC &kp BSPC &kp TAB         &trans &kp SPACE &kp DEL
                         >;
                 };
 
+//`-----------' O O O  O X O `-----------'
                 sym_layer_2 {
                         label = "SYMBOL";
                         bindings = <
 &kp TILDE &kp AMPS  &kp PIPE &kp DLLR  &kp LBRC &kp RBRC		&to L_DEF  &none      &none     &none    &none    &none
 &kp GRAVE &kp HASH  &kp EXCL &kp EQUAL &kp LT   &kp GT			&none      &kp LSHIFT &kp LCTRL &kp LALT &kp LGUI &none
 &none     &kp PRCNT &kp AT   &kp CARET &kp LBKT &kp RBKT		&to LO_SYM &none      &none     &none    &none    &none
-                               &kp ESC &kp BSPC &kp TAB		&kp RET &trans &kp DEL
+                                    &kp ESC &kp BSPC &kp TAB       &kp RET &trans &kp DEL
                         >;
                 };
 
+//`-----------' O O O  O O X `-----------'
                 media_layer_3 {
                         label = "MEDIA";
                         bindings = <
 &kp LG(LA(K)) &none        &none        &none        &none        &bt BT_CLR			&to L_DEF    &none      &none     &none    &none    &none
-&none         &kp C_PREV   &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT   &none					&none        &kp LSHIFT &kp LCTRL &kp LALT &kp LGUI &none
-&none         &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4			&to LO_MEDIA &none      &none     &none    &none    &none
-                                         &kp C_STOP &kp C_PP &kp C_MUTE		&kp RET &kp SPACE &trans
+&none         &kp C_PREV   &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT   &none				&none        &kp LSHIFT &kp LCTRL &kp LALT &kp LGUI &none
+&out OUT_USB  &bt_0        &bt_1        &bt_2        &bt_3        &none				&to LO_MEDIA &none      &none     &none    &none    &none
+                                                    &kp C_STOP &kp C_PP &kp C_MUTE         &kp RET &kp SPACE &trans
                         >;
                 };
 
 // Left hand layers
+//`-----------' O O X  O O O `-----------'
                 number_layer_4 {
                         label = "NUMBER";
                         bindings = <
 &bootloader &none    &none    &none     &none      &to L_DEF			&kp RPAR  &kp N7  &kp N8  &kp N9 &kp LPAR  &kp RPAR
-&none       &kp LGUI &kp LALT &kp LCTRL &kp LSHIFT &none				&kp N0    &kp N4  &kp N5  &kp N6 &kp COLON &kp BSLH
-&none       &none    &none    &none     &none      &to LO_NUM			&kp PLUS  &kp N1  &kp N2  &kp N3 &kp FSLH  &kp STAR
+&none       &kp LGUI &kp LALT &kp LCTRL &kp LSHIFT &none			&kp N0    &kp N1  &kp N2  &kp N3 &kp COLON &kp BSLH
+&none       &none    &none    &none     &none      &to LO_NUM			&kp PLUS  &kp N4  &kp N5  &kp N6 &kp FSLH  &kp STAR
                                      &kp ESC &kp BSPC &trans		&kp RET &kp SPACE &kp DEL
                         >;
                 };
 
+//`-----------' O X O  O O O `-----------'
                 nav_layer_5 {
                         label = "NAV";
                         bindings = <
 &none   &kp LEFT  &kp UP      &kp DOWN    &kp RIGHT   &to L_DEF			&kp LC(Y)  &kp LS(INS) &kp LC(INS) &kp LS(DEL) &kp LC(Z) &kp BSPC
-&none   &kp LGUI  &kp LALT    &kp LCTRL   &kp LSHIFT  &none				&caps_word &kp LEFT    &kp UP      &kp DOWN    &kp RIGHT &kp K_APP
+&none   &kp LGUI  &kp LALT    &kp LCTRL   &kp LSHIFT  &none			&caps_word &kp LEFT    &kp UP      &kp DOWN    &kp RIGHT &kp K_APP
 &none   &kp LC(Z) &kp LS(DEL) &kp LC(INS) &kp LS(INS) &to LO_NAV		&kp INS    &kp HOME    &kp PG_UP   &kp PG_DN   &kp END   &none
                                       &kp ESC &trans &kp TAB		&kp RET &kp SPACE &kp DEL
                         >;
                 };
 
-                mouse_layer_6 {
-                        label = "MOUSE";
+//`-----------' X O O  O O O `-----------'
+                meta_layer_6 {
+                        label = "META";
                         bindings = <
 &none   &none    &none    &none     &none      &to L_DEF			&kp LC(Y)  &kp LS(INS) &kp LC(INS) &kp LS(DEL) &kp LC(Z) &none
 &none   &kp LGUI &kp LALT &kp LCTRL &kp LSHIFT &none				&none &none      &none     &none    &none    &none
-&none   &none    &none    &none     &none      &to LO_MOUSE			&none &none      &none     &none    &none    &none
+&none   &none    &none    &none     &none      &to LO_META			&none &none      &none     &none    &none    &none
                                    &trans &kp BSPC  &kp TAB		&kp RET &kp SPACE &kp DEL
                         >;
                 };
