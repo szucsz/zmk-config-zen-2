@@ -160,7 +160,7 @@
                 nav_layer_5 {
                         label = "NAV";
                         bindings = <
-&kp LA(LEFT)  &kp LA(RIGHT) &kp LC(W)   &kp LC(PG_UP)  &kp LC(PG_DN)   &kp LC(T) 		&none      &kp CA(LEFT) &kp CA(UP) &kp CA(DOWN) &kp CA(RIGHT) &kp BSPC
+&kp LA(LEFT)  &kp LA(RIGHT) &kp LC(W)   &kp LC(PG_UP)  &kp LC(PG_DN)   &kp LC(LS(T)) 		&none      &kp CA(LEFT) &kp CA(UP) &kp CA(DOWN) &kp CA(RIGHT) &kp BSPC
 &kp LC(GRAVE) &kp LGUI      &kp LALT    &kp LCTRL      &kp LSHIFT      &none			&caps_word &kp LEFT     &kp UP     &kp DOWN     &kp RIGHT     &kp K_APP
 &kp LC(Y)     &kp LC(Z)     &kp LS(DEL) &kp LC(INS)    &kp LS(INS)     &to L_SYM		&kp INS    &kp HOME     &kp PG_UP  &kp PG_DN    &kp END       &none
                                                          &kp ESC &trans &kp TAB		&kp RET &kp SPACE &kp DEL
