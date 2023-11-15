@@ -10,6 +10,7 @@
 #define L_NUM     4
 #define L_NAV     5
 #define L_META    6
+#define L_CRSR    7
 
 // opposite layers
 #define LO_FUN    L_NUM
@@ -127,7 +128,7 @@
                         label = "SYM";
                         bindings = <
 &kp TILDE &kp AMPS  &kp PIPE &kp DLLR  &kp LBRC &kp RBRC		&to L_DEF  &none      &none     &none    &none    &none
-&kp GRAVE &kp HASH  &kp EXCL &kp EQUAL &kp LT   &kp GT			&none      &kp LSHIFT &kp LCTRL &kp LALT &kp LGUI &none
+&kp GRAVE &kp HASH  &kp EXCL &kp EQUAL &kp LPAR &kp RPAR		&none      &kp LSHIFT &kp LCTRL &kp LALT &kp LGUI &none
 &none     &kp PRCNT &kp AT   &kp CARET &kp LBKT &kp RBKT		&to L_NAV &none      &none     &none    &none    &none
                                     &kp ESC &kp BSPC &kp TAB       &kp RET &trans &kp DEL
                         >;
@@ -150,8 +151,8 @@
                         label = "NUM";
                         bindings = <
 &bootloader &none    &none    &none     &none      &to L_DEF			&none     &kp N7  &kp N8  &kp N9 &kp LPAR  &kp RPAR
-&none       &kp LGUI &kp LALT &kp LCTRL &kp LSHIFT &none			&kp N0    &kp N1  &kp N2  &kp N3 &kp COLON &kp BSLH
-&none       &none    &none    &none     &none      &to LO_NUM			&kp PLUS  &kp N4  &kp N5  &kp N6 &kp FSLH  &kp STAR
+&none       &kp LGUI &kp LALT &kp LCTRL &kp LSHIFT &none			&kp N0    &kp N4  &kp N5  &kp N6 &kp COLON &kp BSLH
+&none       &none    &none    &none     &none      &to LO_NUM			&kp PLUS  &kp N1  &kp N2  &kp N3 &kp FSLH  &kp STAR
                                      &kp ESC &kp BSPC &trans		&kp RET &kp SPACE &kp DEL
                         >;
                 };
@@ -160,9 +161,9 @@
                 nav_layer_5 {
                         label = "NAV";
                         bindings = <
-&kp LA(LEFT)  &kp LA(RIGHT) &kp LC(W)   &kp LC(PG_UP)  &kp LC(PG_DN)   &kp LC(LS(T)) 		&none      &kp CA(LEFT) &kp CA(UP) &kp CA(DOWN) &kp CA(RIGHT) &kp BSPC
-&kp LC(GRAVE) &kp LGUI      &kp LALT    &kp LCTRL      &kp LSHIFT      &none			&caps_word &kp LEFT     &kp UP     &kp DOWN     &kp RIGHT     &kp K_APP
-&kp LC(Y)     &kp LC(Z)     &kp LS(DEL) &kp LC(INS)    &kp LS(INS)     &to L_SYM		&kp INS    &kp HOME     &kp PG_UP  &kp PG_DN    &kp END       &none
+&kp LA(LEFT)  &kp LA(RIGHT) &kp LC(W)   &kp LC(PG_UP)  &kp LC(PG_DN)   &kp LC(LS(T)) 		&none      &none        &none      &none        &none         &kp BSPC
+&kp LC(GRAVE) &kp LGUI      &kp LALT    &kp LCTRL      &kp LSHIFT      &kp F3			&caps_word &kp LEFT     &kp UP     &kp DOWN     &kp RIGHT     &kp K_APP
+&kp LC(Y)     &kp LC(Z)     &kp LS(DEL) &kp LC(INS)    &kp LS(INS)     &kp K_APP		&kp INS    &kp HOME     &kp PG_UP  &kp PG_DN    &kp END       &none
                                                          &kp ESC &trans &kp TAB		&kp RET &kp SPACE &kp DEL
                         >;
                 };
