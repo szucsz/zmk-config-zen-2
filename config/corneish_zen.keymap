@@ -183,9 +183,9 @@
                 crsr_layer_7 {
                         label = "CRSR";
                         bindings = <
-&kp ESC   &kp LC(Q) &kp LC(W)   &kp LC(PG_UP) &kp LC(PG_DN) &kp LC(LS(T))	&none &none      &none      &none    &kp HOME &kp ESC
-&kp LC(W) &kp LGUI  &kp LALT    &kp LCTRL     &kp LSHIFT    &kp F3		&none &none      &none      &none    &kp UP   &kp RET
-&none     &none     &kp LS(DEL) &kp LC(INS)   &kp LS(INS)   &none		&none &none      &to L_BASE &kp LEFT &kp DOWN &kp RIGHT
+&kp ESC   &kp LC(Q) &kp LC(W)   &kp LC(PG_UP) &kp LC(PG_DN) &kp LC(LS(T))	&none &none      &none     &none    &kp HOME &kp ESC
+&kp LC(A) &kp LGUI  &kp LALT    &kp LCTRL     &kp LSHIFT    &kp F3		&none &none      &none     &none    &kp UP   &kp RET
+&none     &none     &kp LS(DEL) &kp LC(INS)   &kp LS(INS)   &none		&none &none      &to L_DEF &kp LEFT &kp DOWN &kp RIGHT
                                         &kp ESC &kp BSPC &kp TAB	&kp RET &kp SPACE &kp DEL
                         >;
                 };
