@@ -72,44 +72,43 @@
 };
 
 / {
-        keymap {
-                compatible = "zmk,keymap";
-
-                default_layer {
-                        label = "QWERTY";
-                        bindings = <
-   &kp ESC       &kp Q      &kp W        &kp E       &kp R         &kp T         &kp Y       &kp U      &kp I     &kp O     &kp P     &kp TAB
-   &kp LCTRL     &kp A      &kp S        HC(D)       HS(F)         &kp G         &kp H       HS(J)      HC(K)     &kp L     &kp SEMI  &kp SQT
-   &kp LSHFT     &kp Z      &kp X        &kp C       &kp V         &kp B         &kp N       &kp M      &kp COMMA &kp DOT   &kp FSLH  &tog 2
-                                            &kp LALT &tog 1  &kp BSPC    &kp SPACE &kp RET &kp LGUI
-                        >;
-                };
-                lower_layer {
-                        label = "FUN";
-                        bindings = <
-   &trans        &kp LC(GRAVE) &kp PG_UP &kp UP      &kp PG_DN     &kp DEL       &kp F1      &kp F2     &kp F3    &kp F4    &kp F5    &kp F6
-   &kt LCTRL     &kp HOME   &kp LEFT     &kp DOWN    &kp RIGHT     &kp END       &kp F7      &kp F8     &kp F9    &kp F10   &kp F11   &kp F12
-   &kt LSHFT     &kp LC(Z)  &kp LS(DEL)  &kp LC(INS) &kp LS(INS)   &kp K_APP     &kp INS     &caps_word &kp F15   &kp F16   &to 0     &tog 2
-                                           &kt LALT &tog 1 &trans    &trans &trans &kt LGUI
-                        >;
-                };
-                raise_layer {
-                        label = "SYM";
-                        bindings = <
-   &kp TILDE     &kp EXCL   &kp AT       &kp HASH    &kp DLLR      &kp PRCNT     &kp CARET   &kp AMPS   &kp STAR  &kp LPAR  &kp RPAR  &kp UNDER
-   &kp LCTRL     &kp N1     &kp N2       &kp N3      &kp N4        &kp N5        &kp N6      &kp N7     &kp N8    &kp N9    &kp N0    &kp MINUS
-   &kp LSHFT     &kp GRAVE  &kp LBKT     &kp RBKT    &kp LBRC      &kp RBRC      &kp BSLH    &kp PIPE   &kp EQUAL &kp PLUS  &to 0     &tog 2
-                                           &sk LALT &tog 1 &trans    &trans &trans &kt LGUI
-                        >;
-                };
-                meta_layer {
-                        label = "META";
-                        bindings = <
-   &none         &none      &none        &none       &none         &bootloader   &bootloader &none      &none     &none     &none     &none
-   &none         &none      &none        &none       &none         &none         &none       &none      &none     &none     &none     &none
-   &out OUT_USB  &bt_0      &bt_1        &bt_2       &bt_3         &bt BT_CLR    &none       &none      &none     &none     &to 0     &none
-                                           &none &none &none    &none &none &none
-                        >;
-                };
-        };
+  keymap {
+    compatible = "zmk,keymap";
+    default_layer {
+      label = "QWERTY";
+      bindings = <
+&kp ESC       &kp Q      &kp W        &kp E       &kp R         &kp T         &kp Y       &kp U      &kp I     &kp O     &kp P     &kp TAB
+&kp LCTRL     &kp A      &kp S        HC(D)       HS(F)         &kp G         &kp H       HS(J)      HC(K)     &kp L     &kp SEMI  &kp SQT
+&kp LSHFT     &kp Z      &kp X        &kp C       &kp V         &kp B         &kp N       &kp M      &kp COMMA &kp DOT   &kp FSLH  &tog 2
+                                                &kp LALT &tog 1  &kp BSPC    &kp SPACE &kp RET &kp LGUI
+      >;
+    };
+    lower_layer {
+      label = "FUN";
+      bindings = <
+&kp ESC       &kp LC(GRAVE) &kp PG_UP &kp UP      &kp PG_DN     &kp DEL       &kp F1      &kp F2     &kp F3    &kp F4    &kp F5    &kp F6
+&kt LCTRL     &kp HOME   &kp LEFT     &kp DOWN    &kp RIGHT     &kp END       &kp F7      &kp F8     &kp F9    &kp F10   &kp F11   &kp F12
+&kt LSHFT     &kp LC(Z)  &kp LS(DEL)  &kp LC(INS) &kp LS(INS)   &kp K_APP     &kp INS     &caps_word &kp F15   &kp F16   &to 0     &tog 2
+                                                   &kt LALT &tog 1 &trans    &trans &trans &kt LGUI
+      >;
+    };
+    raise_layer {
+      label = "SYM";
+      bindings = <
+&kp TILDE     &kp EXCL   &kp AT       &kp HASH    &kp DLLR      &kp PRCNT     &kp CARET   &kp AMPS   &kp STAR  &kp LPAR  &kp RPAR  &kp UNDER
+&kp LCTRL     &kp N1     &kp N2       &kp N3      &kp N4        &kp N5        &kp N6      &kp N7     &kp N8    &kp N9    &kp N0    &kp MINUS
+&kp LSHFT     &kp GRAVE  &kp LBKT     &kp RBKT    &kp LBRC      &kp RBRC      &kp BSLH    &kp PIPE   &kp EQUAL &kp PLUS  &to 0     &tog 2
+                                                   &sk LALT &tog 1 &trans    &trans &trans &kt LGUI
+      >;
+    };
+    meta_layer {
+      label = "META";
+      bindings = <
+&none         &none      &none        &none       &none         &bootloader   &bootloader &none      &none     &none     &none     &none
+&none         &none      &none        &none       &none         &none         &none       &none      &none     &none     &none     &none
+&out OUT_USB  &bt_0      &bt_1        &bt_2       &bt_3         &bt BT_CLR    &none       &none      &none     &none     &to 0     &none
+                                                        &none &none &none    &none &none &none
+      >;
+    };
+  };
 };
