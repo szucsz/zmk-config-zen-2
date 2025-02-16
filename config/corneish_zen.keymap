@@ -109,9 +109,9 @@
     lower_layer {
       label = "FUN";
       bindings = <
-&msc SCRL_LEFT &msc SCRL_RIGHT &kp PG_UP &kp UP    &kp PG_DN     &kp DEL       &kp F1      &kp F2     &kp F3    &kp F4    &kp F5    &kp F6
-&msc SCRL_UP   &kp HOME   &kp LEFT     &kp DOWN    &kp RIGHT     &kp END       &kp F7      HS(F8)     HC(F9)    HA(F10)   &kp F11   &kp F12
-&msc SCRL_DOWN &kp LC(Z)  &kp LS(DEL)  &kp LC(INS) &kp LS(INS)   &kp K_APP     &kp INS     &caps_word &kp F15   &kp F16   LC(F5)    LC(F12)
+&msc SCRL_LEFT &msc SCRL_RIGHT &kp PG_UP &kp UP    &kp PG_DN     &kp DEL       &kp F1      &kp F2     &kp F3    &kp F4    &kp F5     &kp F6
+&msc SCRL_UP   &kp HOME   &kp LEFT     &kp DOWN    &kp RIGHT     &kp END       &kp F7      HS(F8)     HC(F9)    HA(F10)   &kp F11    &kp F12
+&msc SCRL_DOWN &kp LC(Z)  &kp LS(DEL)  &kp LC(INS) &kp LS(INS)   &kp K_APP     &kp INS     &caps_word &kp F15   &kp F16   &kp LC(F5) &kp LC(F12)
                                                    &kt LALT &tog 1 &trans    &kp RET &tog 2 &kp TAB
       >;
     };
