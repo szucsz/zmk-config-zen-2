@@ -2,6 +2,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/pointing.h>
 
 #define HS(k)  &hm LSHIFT k
 #define HC(k)  &hm LCTRL k
@@ -99,27 +100,27 @@
     default_layer {
       label = "QWERTY";
       bindings = <
-&kp ESC       &kp Q      &kp W        &kp E       &kp R         &kp T         &kp Y       &kp U      &kp I     &kp O     &kp P     &kp TAB
-&kp LCTRL     &kp A      &kp S        HC(D)       HS(F)         &kp G         &kp H       HS(J)      HC(K)     &kp L     &kp SEMI  &kp SQT
-&kp LSHFT     &kp Z      &kp X        &kp C       &kp V         &kp B         &kp N       &kp M      &kp COMMA &kp DOT   &kp FSLH  &kp RET
+&kp GRAVE      &kp Q      &kp W        &kp E       &kp R         &kp T         &kp Y       &kp U      &kp I     &kp O     &kp P     &kp ESC
+&kp LCTRL      &kp A      &kp S        HC(D)       HS(F)         &kp G         &kp H       HS(J)      HC(K)     &kp L     &kp SEMI  &kp SQT
+&kp LSHFT      &kp Z      &kp X        &kp C       &kp V         &kp B         &kp N       &kp M      &kp COMMA &kp DOT   &kp FSLH  &kp RET
                                           &kp LALT &layer_lower  &kp BSPC    &space_ret &layer_raise &kp LGUI
       >;
     };
     lower_layer {
       label = "FUN";
       bindings = <
-&kp ESC       &kp LC(GRAVE) &kp PG_UP &kp UP      &kp PG_DN     &kp DEL       &kp F1      &kp F2     &kp F3    &kp F4    &kp F5    &kp F6
-&kt LCTRL     &kp HOME   &kp LEFT     &kp DOWN    &kp RIGHT     &kp END       &kp F7      HS(F8)     HC(F9)    HA(F10)   &kp F11   &kp F12
-&kt LSHFT     &kp LC(Z)  &kp LS(DEL)  &kp LC(INS) &kp LS(INS)   &kp K_APP     &kp INS     &caps_word &kp F15   &kp F16   LC(F5)    LC(F12)
-                                                   &kt LALT &tog 1 &trans    &kp RET &tog 2 &kt LGUI
+&msc SCRL_LEFT &msc SCRL_RIGHT &kp PG_UP &kp UP    &kp PG_DN     &kp DEL       &kp F1      &kp F2     &kp F3    &kp F4    &kp F5    &kp F6
+&msc SCRL_UP   &kp HOME   &kp LEFT     &kp DOWN    &kp RIGHT     &kp END       &kp F7      HS(F8)     HC(F9)    HA(F10)   &kp F11   &kp F12
+&msc SCRL_DOWN &kp LC(Z)  &kp LS(DEL)  &kp LC(INS) &kp LS(INS)   &kp K_APP     &kp INS     &caps_word &kp F15   &kp F16   LC(F5)    LC(F12)
+                                                   &kt LALT &tog 1 &trans    &kp RET &tog 2 &kp TAB
       >;
     };
     raise_layer {
       label = "SYM";
       bindings = <
-&kp TILDE     &kp EXCL   &kp AT       &kp HASH    &kp DLLR      &kp PRCNT     &kp CARET   &kp AMPS   &kp STAR  &kp LPAR  &kp RPAR  &kp UNDER
-&kp LCTRL     &kp N1     &kp N2       &kp N3      &kp N4        &kp N5        &kp N6      &kp N7     &kp N8    &kp N9    &kp N0    &kp MINUS
-&kp LSHFT     &kp GRAVE  &kp LBKT     &kp RBKT    &kp LBRC      &kp RBRC      &kp BSLH    &kp PIPE   &kp EQUAL &kp PLUS  &to 0     &kp RET
+&kp TILDE      &kp EXCL   &kp AT       &kp HASH    &kp DLLR      &kp PRCNT     &kp CARET   &kp AMPS   &kp STAR  &kp LPAR  &kp RPAR  &kp UNDER
+&kp LCTRL      &kp N1     &kp N2       &kp N3      &kp N4        &kp N5        &kp N6      &kp N7     &kp N8    &kp N9    &kp N0    &kp MINUS
+&kp LSHFT      &kp GRAVE  &kp LBKT     &kp RBKT    &kp LBRC      &kp RBRC      &kp BSLH    &kp PIPE   &kp EQUAL &kp PLUS  &to 0     &kp RET
                                                    &sk LALT &tog 1 &kp DEL   &trans &tog 2 &kt LGUI
       >;
     };
