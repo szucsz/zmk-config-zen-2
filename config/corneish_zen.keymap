@@ -10,9 +10,18 @@
 #define HG(k)  &hm LGUI k
 #define GC(k)  &kp LG(LC(k))
 #define GA(k)  &kp LG(LA(k))
+#define MSC_UP    &msc SCRL_UP
+#define MSC_DOWN  &msc SCRL_DOWN
+#define MSC_LEFT  &msc SCRL_LEFT
+#define MSC_RIGHT &msc SCRL_RIGHT
+#define MMV_UP    &mmv MOVE_UP
+#define MMV_DOWN  &mmv MOVE_DOWN
+#define MMV_LEFT  &mmv MOVE_LEFT
+#define MMV_RIGHT &mmv MOVE_RIGHT
+
 
 &caps_word {
-	continue-list = <UNDERSCORE MINUS BACKSPACE DELETE>;
+	continue-list = <UNDERSCORE BACKSPACE DELETE>;
 };
 
 / {
@@ -103,7 +112,7 @@
     default_layer {
       label = "QWERTY";
       bindings = <
-&kp GRAVE      &kp Q      &kp W        &kp E       &kp R         &kp T         &kp Y       &kp U      &kp I     &kp O     &kp P     &kp ESC
+&kp ESC        &kp Q      &kp W        &kp E       &kp R         &kp T         &kp Y       &kp U      &kp I     &kp O     &kp P     &kp GRAVE
 &kp LCTRL      &kp A      &kp S        HC(D)       HS(F)         &kp G         &kp H       HS(J)      HC(K)     &kp L     &kp SEMI  &kp SQT
 &kp LSHFT      &kp Z      &kp X        &kp C       &kp V         &kp B         &kp N       &kp M      &kp COMMA &kp DOT   &kp FSLH  &kp TAB
                                           &kp LALT &layer_lower  &kp BSPC    &space_ret &layer_raise &kp LGUI
@@ -112,28 +121,28 @@
     lower_layer {
       label = "FUN";
       bindings = <
-&msc SCRL_LEFT &msc SCRL_RIGHT &kp PG_UP &kp UP    &kp PG_DN     &kp DEL       &kp F1      &kp F2     &kp F3    &kp F4    &kp F5     &kp F6
-&msc SCRL_UP   &kp HOME   &kp LEFT     &kp DOWN    &kp RIGHT     &kp END       &kp F7      HS(F8)     HC(F9)    HA(F10)   HG(F11)    &kp F12
-&msc SCRL_DOWN &kp LC(Z)  &kp LS(DEL)  &kp LC(INS) &kp LS(INS)   &kp INS       &kp K_APP   &caps_word &kp LG(TAB) GA(K)   &kp LC(F5) &kp LC(F12)
+&none          &none      &kp PG_UP    &kp UP      &kp PG_DN     &kp DEL       &kp F1      &kp F2     &kp F3    &kp F4    &kp F5     &kp F6
+&none          &kp HOME   &kp LEFT     &kp DOWN    &kp RIGHT     &kp END       &kp F7      HS(F8)     HC(F9)    HA(F10)   HG(F11)    &kp F12
+&none          &kp LC(Z)  &kp LS(DEL)  &kp LC(INS) &kp LS(INS)   &kp INS       &kp K_APP   &caps_word &kp LG(TAB) GA(K)   &kp LC(F5) &kp LC(F12)
                                                    &kp LALT &tog 1 &trans    &kp RET &tog 2 &kp TAB
       >;
     };
     raise_layer {
       label = "SYM";
       bindings = <
-&kp TILDE      &kp EXCL   &kp AT       &kp HASH    &kp DLLR      &kp PRCNT     &kp CARET   &kp AMPS   &kp STAR  &kp LPAR  &kp RPAR  &kp UNDER
-&kp LCTRL      &kp N1     &kp N2       &kp N3      &kp N4        &kp N5        &kp N6      &kp N7     &kp N8    &kp N9    &kp N0    &kp MINUS
-&kp LSHFT      &none      &kp LBKT     &kp RBKT    &kp LBRC      &kp RBRC      &none       &kp PIPE   &kp EQUAL &kp PLUS  &kp BSLH  &kp TAB
-                                                   &kp LALT &tog 1 &kp DEL   &trans &tog 2 &kp LGUI
+&none         &kp EXCL   &kp AT       &kp HASH    &kp DLLR      &kp PRCNT     &kp CARET   &kp AMPS   &kp STAR  &kp LPAR  &kp RPAR  &kp UNDER
+&kp LCTRL     &kp N1     &kp N2       &kp N3      &kp N4        &kp N5        &kp N6      &kp N7     &kp N8    &kp N9    &kp N0    &kp MINUS
+&kp LSHFT     &none      &kp LBKT     &kp RBKT    &kp LBRC      &kp RBRC      &none       &kp PIPE   &kp EQUAL &kp PLUS  &kp BSLH  &kp TAB
+                                                  &kp LALT &tog 1 &kp DEL   &trans &tog 2 &kp LGUI
       >;
     };
     meta_layer {
       label = "META";
       bindings = <
-&none          &none      GA(LEFT)     GC(F4)      GA(RIGHT)     &bootloader   &bootloader &none      &none     &none     &none     &none
-&none          &kp LG(TAB) GC(LEFT)    GC(D)       GC(RIGHT)     &none         &none       &none      &none     &none     &none     &none
-&out OUT_USB   &bt_0      &bt_1        &bt_2       &bt_3         &bt BT_CLR    &none       &none      &none     &none     &none     &none
-                                                          &none &none &to 0  &to 0 &none &none
+&none         &none      GA(LEFT)     &none       GA(RIGHT)     &bootloader   &bootloader &mkp LCLK  &mkp RCLK &none     &none     &none
+&none         &kp LG(TAB) GC(LEFT)    GC(D)       GC(RIGHT)     GC(F4)        &none       MMV_LEFT   MMV_UP    MMV_DOWN  MMV_RIGHT &none
+&out OUT_USB  &bt_0      &bt_1        &bt_2       &bt_3         &bt BT_CLR    &none       MSC_LEFT   MSC_UP    MSC_DOWN  MSC_RIGHT &none
+                                                         &none &none &to 0  &to 0 &none &none
       >;
     };
   };
