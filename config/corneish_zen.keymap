@@ -139,10 +139,10 @@
     meta_layer {
       display-name = "META";
       bindings = <
-&kp ESC      &none       GA(LEFT)     GA(LEFT)    GA(RIGHT)     GC(F4)        &none       &mkp LCLK  &mkp RCLK &none     &none     &none
+&kp ESC      &none       GA(LEFT)     GA(LEFT)    GA(RIGHT)     GC(F4)        &none       &mkp LCLK  &mkp RCLK &none     &none     &studio_unlock
 &none        &kp LG(TAB) &kp RET      GC(LEFT)    GC(RIGHT)     GC(D)         &none       MMV_LEFT   MMV_UP    MMV_DOWN  MMV_RIGHT &none
 &out OUT_USB &bt_0       &bt_1        &bt_2       &bt_3         &bt BT_CLR    &none       MSC_LEFT   MSC_UP    MSC_DOWN  MSC_RIGHT &none
-                                         &bootloader &studio_unlock &to 0   &to 0 &none &bootloader
+                                                  &bootloader &none &to 0   &to 0 &none &bootloader
       >;
     };
   };
