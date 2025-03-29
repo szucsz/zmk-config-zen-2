@@ -26,7 +26,7 @@
 
 / {
 	behaviors {
-		hm: homerow_mods {
+            hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
@@ -132,16 +132,16 @@
       bindings = <
 &none         &kp EXCL   &kp AT       &kp HASH    &kp DLLR      &kp PRCNT     &kp CARET   &kp AMPS   &kp STAR  &kp LPAR  &kp RPAR  &kp UNDER
 &kp LCTRL     HG(N1)     &kp N2       HC(N3)      &kp N4        &kp N5        &kp N6      &kp N7     HC(N8)    &kp N9    HG(N0)    &kp MINUS
-&kp LSHFT     &none      &kp LBKT     &kp RBKT    &kp LBRC      &kp RBRC      &kp UNDER   &kp MINUS  &kp EQUAL &kp PLUS  &none     &none
+&kp LSHFT     &none      &kp LBKT     &kp RBKT    &kp LBRC      &kp RBRC      &kp UNDER   &kp MINUS  &kp EQUAL &kp PLUS  &kp DOT   &none
                                                   &kp LALT &tog 1 &trans    &trans &tog 2 &kp LGUI
       >;
     };
     meta_layer {
       display-name = "META";
       bindings = <
-&kp ESC       &none      GA(LEFT)     GA(LEFT)    GA(RIGHT)     GC(F4)        &none       &mkp LCLK  &mkp RCLK &none     &none     &none
+&kp ESC      &none       GA(LEFT)     GA(LEFT)    GA(RIGHT)     GC(F4)        &none       &mkp LCLK  &mkp RCLK &none     &none     &none
 &none        &kp LG(TAB) &kp RET      GC(LEFT)    GC(RIGHT)     GC(D)         &none       MMV_LEFT   MMV_UP    MMV_DOWN  MMV_RIGHT &none
-&out OUT_USB  &bt_0      &bt_1        &bt_2       &bt_3         &bt BT_CLR    &none       MSC_LEFT   MSC_UP    MSC_DOWN  MSC_RIGHT &none
+&out OUT_USB &bt_0       &bt_1        &bt_2       &bt_3         &bt BT_CLR    &none       MSC_LEFT   MSC_UP    MSC_DOWN  MSC_RIGHT &none
                                          &bootloader &studio_unlock &to 0   &to 0 &none &bootloader
       >;
     };
