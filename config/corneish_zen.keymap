@@ -157,7 +157,7 @@
 &trans        &kp LC(GRAVE) &kp HOME  &kp UP      &kp END       &kp DEL       &kp F1      &kp F2        &kp F3        &kp F4     &kp F5     &kp F6
 &caps_word    &kp LA(TAB) &kp LEFT    &kp DOWN    &kp RIGHT     &kp PG_UP     &kp F7      HS(F8)        HC(F9)        HA(F10)    HG(F11)    &kp F12
 &trans        &kp LC(Z)   &kp LS(DEL) &kp LC(INS) &kp LS(INS)   &kp PG_DN     &kp INS     &kp LC(PG_UP) &kp LC(PG_DN) &kp LC(W)  &kp LC(F5) &kp LC(F12)
-                                        &kp C_VOL_UP &kp C_VOL_DN &kp BSPC  &kp SPACE &trans &trans
+                                        &kp C_VOL_DN &kp C_VOL_UP &kp BSPC  &kp SPACE &trans &trans
       >;
     };
     raise_layer {
