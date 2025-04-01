@@ -106,15 +106,21 @@
   // };
   combos {
     compatible = "zmk,combos";
-    combo_space {
+    combo_space_l {
       timeout-ms = <50>;
       key-positions = <27 28>;
       bindings = <&kp SPACE>;
       layers = <0>;
     };
-    combo_ret {
+    combo_ret_l {
       timeout-ms = <50>;
       key-positions = <3 4>;
+      bindings = <&kp RET>;
+      layers = <0>;
+    };
+    combo_ret_r {
+      timeout-ms = <50>;
+      key-positions = <7 8>;
       bindings = <&kp RET>;
       layers = <0>;
     };
