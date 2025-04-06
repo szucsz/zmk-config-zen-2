@@ -139,7 +139,7 @@
     combo_meta_lock {
       timeout-ms = <50>;
       key-positions = <37 40>;
-      bindings = <&tog 3>;
+      bindings = <&mo 3>;
       layers = <0 3>;
     };
   };
