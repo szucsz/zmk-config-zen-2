@@ -108,19 +108,19 @@
     compatible = "zmk,combos";
     combo_space_l {
       timeout-ms = <50>;
-      key-positions = <27 28>;
+      key-positions = <28 29>;
       bindings = <&kp SPACE>;
       layers = <0>;
     };
     combo_ret_l {
       timeout-ms = <50>;
-      key-positions = <3 4>;
+      key-positions = <4 5>;
       bindings = <&kp RET>;
       layers = <0>;
     };
     combo_ret_r {
       timeout-ms = <50>;
-      key-positions = <7 8>;
+      key-positions = <6 7>;
       bindings = <&kp RET>;
       layers = <0>;
     };
@@ -154,7 +154,7 @@
 &kp ESC       &kp Q      &kp W        &kp E       &kp R         &kp T         &kp Y       &kp U      &kp I     &kp O     &kp P     &kp GRAVE
 &kp LCTRL     &kp A      &kp S        HC(D)       HS(F)         &kp G         &kp H       HS(J)      HC(K)     &kp L     &kp SEMI  &kp SQT
 &kp LSHFT     &kp Z      &kp X        &kp C       &kp V         &kp B         &kp N       &kp M      &kp COMMA &kp DOT   &kp FSLH  &kp BSLH
-                                             &kp LALT &kp TAB  &lt 1 BSPC   &lt 2 SPACE &kp RET &kp LGUI
+                                             &kp LALT &kp TAB  &lt 1 BSPC   &lt 2 SPACE &kp DEL &kp LGUI
       >;
     };
     lower_layer {
