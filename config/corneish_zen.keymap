@@ -106,21 +106,21 @@
   // };
   combos {
     compatible = "zmk,combos";
-    combo_space_l {
-      timeout-ms = <50>;
-      key-positions = <28 29>;
-      bindings = <&kp SPACE>;
-      layers = <0 1 2>;
-    };
-    combo_ret_l {
+    combo_ret_l_RT {
       timeout-ms = <50>;
       key-positions = <4 5>;
       bindings = <&kp RET>;
       layers = <0 1 2>;
     };
-    combo_ret_r {
+    combo_space_l_VB {
       timeout-ms = <50>;
-      key-positions = <6 7>;
+      key-positions = <28 29>;
+      bindings = <&kp SPACE>;
+      layers = <0 1 2>;
+    };
+    combo_ret_r_COMMA_DOT {
+      timeout-ms = <50>;
+      key-positions = <32 33>;
       bindings = <&kp RET>;
       layers = <0 1 2>;
     };
