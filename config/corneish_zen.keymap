@@ -19,6 +19,10 @@
 #define MMV_LEFT  &mmv MOVE_LEFT
 #define MMV_RIGHT &mmv MOVE_RIGHT
 
+#define LWB    0
+#define LWF    1
+#define LWS    2
+#define LWM    3
 
 &caps_word {
 	continue-list = <UNDERSCORE BACKSPACE DELETE>;
@@ -40,14 +44,14 @@
             label = "LAYER_LOWER";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&mo 1>, <&tog 1>;
+            bindings = <&mo LWF>, <&tog LWF>;
         };
     layer_raise: tap_dance_raise {
             compatible = "zmk,behavior-tap-dance";
             label = "LAYER_RAISE";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&mo 2>, <&tog 2>;
+            bindings = <&mo LWS>, <&tog LWS>;
         };
     space_ret: tap_dance_space_ret {
             compatible = "zmk,behavior-tap-dance";
@@ -110,37 +114,37 @@
       timeout-ms = <50>;
       key-positions = <28 29>;
       bindings = <&kp RET>;
-      layers = <0 1 2>;
+      layers = <LWB LWF LWS>;
     };
     combo_space_l_RT {
       timeout-ms = <50>;
       key-positions = <4 5>;
       bindings = <&kp SPACE>;
-      layers = <0 1 2>;
+      layers = <LWB LWF LWS>;
     };
     combo_ret_r_COMMA_DOT {
       timeout-ms = <50>;
       key-positions = <32 33>;
       bindings = <&kp RET>;
-      layers = <0 1 2>;
+      layers = <LWB LWF LWS>;
     };
     combo_fun_lock {
       timeout-ms = <50>;
       key-positions = <37 38>;
-      bindings = <&tog 1>;
-      layers = <0 1>;
+      bindings = <&tog LWF>;
+      layers = <LWB LWF>;
     };
     combo_sym_lock {
       timeout-ms = <50>;
       key-positions = <39 40>;
-      bindings = <&tog 2>;
-      layers = <0 2>;
+      bindings = <&tog LWS>;
+      layers = <LWB LWS>;
     };
     combo_meta_lock {
       timeout-ms = <50>;
       key-positions = <37 40>;
-      bindings = <&mo 3>;
-      layers = <0 3>;
+      bindings = <&mo LWM>;
+      layers = <LWB LWM>;
     };
   };
 };
@@ -154,7 +158,7 @@
 &kp ESC       &kp Q      &kp W        &kp E       &kp R         &kp T         &kp Y       &kp U      &kp I     &kp O     &kp P     &kp GRAVE
 &kp LCTRL     &kp A      &kp S        HC(D)       HS(F)         &kp G         &kp H       HS(J)      HC(K)     &kp L     &kp SEMI  &kp SQT
 &kp LSHFT     &kp Z      &kp X        &kp C       &kp V         &kp B         &kp N       &kp M      &kp COMMA &kp DOT   &kp FSLH  &kp BSLH
-                                             &kp LALT &kp TAB  &lt 1 BSPC   &lt 2 SPACE &kp DEL &kp LGUI
+                                           &kp LALT &kp TAB  &lt LWF BSPC   &lt LWS SPACE &kp DEL &kp LGUI
       >;
     };
     lower_layer {
