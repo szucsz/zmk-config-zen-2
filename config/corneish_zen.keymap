@@ -35,33 +35,33 @@
 };
 
 / {
-    behaviors {
-            hm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <300>;
-            quick-tap-ms = <0>;
-            flavor = "balanced";
-            bindings = <&kp>, <&kp>;
-        };
+  behaviors {
+    hm: homerow_mods {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      tapping-term-ms = <300>;
+      quick-tap-ms = <0>;
+      flavor = "balanced";
+      bindings = <&kp>, <&kp>;
+    };
     layer_lower: tap_dance_lower {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <250>;
-            bindings = <&mo LWF>, <&tog LWF>;
-        };
+      compatible = "zmk,behavior-tap-dance";
+      #binding-cells = <0>;
+      tapping-term-ms = <250>;
+      bindings = <&mo LWF>, <&tog LWF>;
+    };
     layer_raise: tap_dance_raise {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <250>;
-            bindings = <&mo LWS>, <&tog LWS>;
-        };
+      compatible = "zmk,behavior-tap-dance";
+      #binding-cells = <0>;
+      tapping-term-ms = <250>;
+      bindings = <&mo LWS>, <&tog LWS>;
+    };
     space_ret: tap_dance_space_ret {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <250>;
-            bindings = <&kp SPACE>, <&kp RET>;
-        };
+      compatible = "zmk,behavior-tap-dance";
+      #binding-cells = <0>;
+      tapping-term-ms = <250>;
+      bindings = <&kp SPACE>, <&kp RET>;
+    };
   };
 
   macros {
@@ -163,7 +163,7 @@
       display-name = "W QWE";
       bindings = <
 &kp ESC       &kp Q      &kp W        &kp E       &kp R         &kp T         &kp Y       &kp U      &kp I     &kp O     &kp P     &kp GRAVE
-&kp LCTRL     &kp A      &kp S        HC(D)       HS(F)         &kp G         &kp H       HS(J)      HC(K)     &kp L     &kp SEMI  &kp SQT
+&kp LCTRL     &kp A      &kp S         HC(D)       HS(F)        &kp G         &kp H        HS(J)      HC(K)    &kp L     &kp SEMI  &kp SQT
 &kp LSHFT     &kp Z      &kp X        &kp C       &kp V         &kp B         &kp N       &kp M      &kp COMMA &kp DOT   &kp FSLH  &kp BSLH
                                            &kp LALT &kp TAB  &lt LWF BSPC   &lt LWS SPACE &kp DEL &kp RGUI
       >;
@@ -181,7 +181,7 @@
       display-name = "W FUN";
       bindings = <
 &trans        &kp LC(GRAVE) &kp HOME  &kp UP      &kp END       &kp DEL       &kp F1      &kp F2        &kp F3        &kp F4        &kp F5     &kp F6
-&kp LG(TAB)   &kp LA(TAB) &kp LEFT    &kp DOWN    &kp RIGHT     &kp PG_UP     &kp F7      HS(F8)        HC(F9)        HA(F10)       HG(F11)    &kp F12
+&kp LG(TAB)   &kp LA(TAB) &kp LEFT    &kp DOWN    &kp RIGHT     &kp PG_UP     &kp F7       HS(F8)        HC(F9)       HA(F10)       HG(F11)    &kp F12
 &caps_word    &kp LC(Z)   &kp LS(DEL) &kp LC(INS) &kp LS(INS)   &kp PG_DN     &kp INS     &kp LC(W)     &kp LC(PG_UP) &kp LC(PG_DN) &kp LC(F5) &kp LC(F12)
                                         &kp C_VOL_DN &kp C_VOL_UP &kp BSPC  &kp SPACE &trans &trans
       >;
@@ -207,18 +207,18 @@
     mac_lower_layer {
       display-name = "M FUN";
       bindings = <
-&trans     &kp LC(GRAVE) &kp LG(LEFT) &kp UP   &kp LG(RIGHT)    &kp DEL       &kp F1      &kp F2        &kp F3        &kp F4        &kp F5     &kp F6
-&kp LCMD      &kp LG(TAB)   &kp LEFT  &kp DOWN    &kp RIGHT     &kp PG_UP     &kp F7      HS(F8)        HM(F9)        HA(F10)       HC(F11)    &kp F12
-&caps_word    &kp LG(Z)     &kp LG(X) &kp LG(C)   &kp LG(V)     &kp PG_DN     &kp INS     &kp LG(W)     SG(LBKT)      SG(RBKT)      &kp LC(F5) SG(N4)
+&trans     &kp LC(GRAVE) &kp LG(LEFT) &kp UP   &kp LG(RIGHT)    &kp DEL       &kp F1      &kp F2        &kp F3       &kp F4        &kp F5     &kp F6
+&kp LCMD      &kp LG(TAB)   &kp LEFT  &kp DOWN    &kp RIGHT     &kp PG_UP     &kp F7       HS(F8)        HM(F9)       HA(F10)       HC(F11)   &kp F12
+&caps_word    &kp LG(Z)     &kp LG(X) &kp LG(C)   &kp LG(V)     &kp PG_DN     &kp INS     &kp LG(W)     SG(LBKT)      SG(RBKT)     &kp LC(F5) SG(N4)
                                         &kp C_VOL_DN &kp C_VOL_UP &kp BSPC  &kp SPACE &trans &trans
       >;
     };
     mac_raise_layer {
       display-name = "M SYM";
       bindings = <
-&trans        &kp EXCL   &kp AT       &kp HASH    &kp DLLR      &kp PRCNT     &kp CARET   &kp AMPS   &kp STAR  &kp LPAR  &kp RPAR  &kp COMMA
-&kp LCMD      HC(N1)     HA(N2)       HM(N3)      &kp N4        &kp N5        &kp N6      N7         HM(N8)    HA(N9)    HC(N0)    &kp DOT
-&kp LSHFT     &none      &kp LBKT     &kp RBKT    &kp LBRC      &kp RBRC      &kp UNDER   &kp MINUS  &kp EQUAL &kp PLUS  &kp FSLH  &none
+&trans       &kp EXCL   &kp AT       &kp HASH    &kp DLLR      &kp PRCNT     &kp CARET   &kp AMPS   &kp STAR  &kp LPAR  &kp RPAR  &kp COMMA
+&kp LCMD      HC(N1)     HA(N2)       HM(N3)     &kp N4        &kp N5        &kp N6      N7         HM(N8)    HA(N9)    HC(N0)    &kp DOT
+&kp LSHFT     &none     &kp LBKT     &kp RBKT    &kp LBRC      &kp RBRC      &kp UNDER   &kp MINUS  &kp EQUAL &kp PLUS  &kp FSLH  &none
                                                    &trans &trans &kp BSPC   &kp SPACE &trans &trans
       >;
     };
